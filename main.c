@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <windows.h>
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996)
 
-// A5BGLEAGUE Simulator V 1.1.0 RC1
+// A5BGLEAGUE Simulator V 1.1.2 Release
 
 int main()
 {
 	printf("\nA5BG FOOTBALL LEAGUE ZODDESLIGA 09-10");
-	printf("\n°æ±â ½Ã¹Ä·¹ÀÌÅÍ 1.1.0 Release");
+	printf("\nê²½ê¸° ì‹œë®¬ë ˆì´í„° 1.1.2 Release");
 
-	//È¨
+	//í™ˆ
 
 	int home_def_left = 0, home_def_center = 0, home_def_right = 0,
 		home_mid_left = 0, home_mid_center = 0, home_mid_right = 0,
@@ -25,15 +26,15 @@ int main()
 
 	char home_name[30];
 
-	printf("\n\nÈ¨ ÆÀ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+	printf("\n\ní™ˆ íŒ€ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 	scanf(" %[^\n]", &home_name);
 
-	printf("\nÈ¨ ÆÀ ÄÚµå°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+	printf("\ní™ˆ íŒ€ ì½”ë“œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 	for (int sformcodes = 0; sformcodes < 14; ++sformcodes) {
 		scanf("%d", &sform[sformcodes]);
 	}
 
-	switch (sform[0]) { // È¨ °ñÅ°ÆÛ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[0]) { // í™ˆ ê³¨í‚¤í¼ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 	case 0:
 		home_def_left += 3; home_def_center += 3;  home_def_right += 3;
 	case 1:
@@ -41,44 +42,44 @@ int main()
 		home_mid_left += 2; home_mid_center += 2; home_mid_right += 2;
 	}
 
-	home_def_center += (2 * sform[1]); // È¨ ¼¾ÅÍ¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	home_def_center += (2 * sform[1]); // í™ˆ ì„¼í„°ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 
-	switch (sform[2]) // È¨ ¿ŞÂÊ Ç®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[2]) // í™ˆ ì™¼ìª½ í’€ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_def_left += 3;
 
-	switch (sform[3]) // È¨ ¿À¸¥ÂÊ Ç®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[3]) // í™ˆ ì˜¤ë¥¸ìª½ í’€ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_def_right += 3;
 
-	home_def_center += sform[4]; // È¨ ¼öºñÇü Áß¿ø °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	home_def_center += sform[4]; // í™ˆ ìˆ˜ë¹„í˜• ì¤‘ì› ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 	home_mid_center += (3 * sform[4]);
 
-	switch (sform[5]) // È¨ ¿ŞÂÊ À®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[5]) // í™ˆ ì™¼ìª½ ìœ™ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_def_left++; home_mid_left += 3;
 
-	switch (sform[6]) // È¨ ¿À¸¥ÂÊ À®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[6]) // í™ˆ ì˜¤ë¥¸ìª½ ìœ™ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_def_right++; home_mid_right += 3;
 
-	switch (sform[7]) // È¨ ¿ŞÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[7]) // í™ˆ ì™¼ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_mid_left += 8;
 
-	switch (sform[8]) // È¨ ¿À¸¥ÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[8]) // í™ˆ ì˜¤ë¥¸ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_mid_right += 8;
 
-	home_mid_center += (5 * sform[9]); // È¨ Áß¿ø ¹ÌµåÇÊ´õ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	home_mid_center += (5 * sform[9]); // í™ˆ ì¤‘ì› ë¯¸ë“œí•„ë” ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 
-	switch (sform[10]) // È¨ °ø°İÇü ¿ŞÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[10]) // í™ˆ ê³µê²©í˜• ì™¼ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_for_left += 10;
 
-	switch (sform[11]) // È¨ °ø°İÇü ¿À¸¥ÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[11]) // í™ˆ ê³µê²©í˜• ì˜¤ë¥¸ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_for_right += 10;
 
-	switch (sform[12]) // È¨ ¼¼ÄÁµå ½ºÆ®¶óÀÌÄ¿ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[12]) // í™ˆ ì„¸ì»¨ë“œ ìŠ¤íŠ¸ë¼ì´ì»¤ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_mid_center += 3; home_for_center += 5;
 
-	switch (sform[13]) // È¨ ½ºÆ®¶óÀÌÄ¿ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (sform[13]) // í™ˆ ìŠ¤íŠ¸ë¼ì´ì»¤ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: home_for_center += 10;
 
-	// ¿øÁ¤
+	// ì›ì •
 
 	int away_def_left = 0, away_def_center = 0, away_def_right = 0,
 		away_mid_left = 0, away_mid_center = 0, away_mid_right = 0,
@@ -92,15 +93,15 @@ int main()
 
 	char away_name[30];
 
-	printf("\n\n¿øÁ¤ ÆÀ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+	printf("\n\nì›ì • íŒ€ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 	scanf(" %[^\n]", &away_name);
 
-	printf("\n¿øÁ¤ ÆÀ ÄÚµå°ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+	printf("\nì›ì • íŒ€ ì½”ë“œê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 	for (int aformcodes = 0; aformcodes < 14; ++aformcodes) {
 		scanf("%d", &aform[aformcodes]);
 	}
 
-	switch (aform[0]) { // ¿øÁ¤ °ñÅ°ÆÛ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[0]) { // ì›ì • ê³¨í‚¤í¼ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 	case 0:
 		away_def_left += 3; away_def_center += 3;  away_def_right += 3;
 	case 1:
@@ -108,420 +109,390 @@ int main()
 		away_mid_left += 2; away_mid_center += 2; away_mid_right += 2;
 	}
 
-	away_def_center += (2 * aform[1]); // ¿øÁ¤ ¼¾ÅÍ¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	away_def_center += (2 * aform[1]); // ì›ì • ì„¼í„°ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 
-	switch (aform[2]) // ¿øÁ¤ ¿ŞÂÊ Ç®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[2]) // ì›ì • ì™¼ìª½ í’€ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_def_left += 3;
 
-	switch (aform[3]) // ¿øÁ¤ ¿À¸¥ÂÊ Ç®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[3]) // ì›ì • ì˜¤ë¥¸ìª½ í’€ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_def_right += 3;
 
-	away_def_center += aform[4]; // ¿øÁ¤ ¼öºñÇü Áß¿ø °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	away_def_center += aform[4]; // ì›ì • ìˆ˜ë¹„í˜• ì¤‘ì› ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 	away_mid_center += (3 * aform[4]);
 
-	switch (aform[5]) // ¿øÁ¤ ¿ŞÂÊ À®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[5]) // ì›ì • ì™¼ìª½ ìœ™ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_def_left++; away_mid_left += 3;
 
-	switch (aform[6]) // ¿øÁ¤ ¿À¸¥ÂÊ À®¹é °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[6]) // ì›ì • ì˜¤ë¥¸ìª½ ìœ™ë°± ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_def_right++; away_mid_right += 3;
 
-	switch (aform[7]) // ¿øÁ¤ ¿ŞÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[7]) // ì›ì • ì™¼ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_mid_left += 8;
 
-	switch (aform[8]) // ¿øÁ¤ ¿À¸¥ÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[8]) // ì›ì • ì˜¤ë¥¸ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_mid_right += 8;
 
-	away_mid_center += (5 * aform[9]); // ¿øÁ¤ Áß¿ø ¹ÌµåÇÊ´õ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	away_mid_center += (5 * aform[9]); // ì›ì • ì¤‘ì› ë¯¸ë“œí•„ë” ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 
-	switch (aform[10]) // ¿øÁ¤ °ø°İÇü ¿ŞÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[10]) // ì›ì • ê³µê²©í˜• ì™¼ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_for_left += 10;
 
-	switch (aform[11]) // ¿øÁ¤ °ø°İÇü ¿À¸¥ÂÊ À®¾î °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[11]) // ì›ì • ê³µê²©í˜• ì˜¤ë¥¸ìª½ ìœ™ì–´ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_for_right += 10;
 
-	switch (aform[12]) // ¿øÁ¤ ¼¼ÄÁµå ½ºÆ®¶óÀÌÄ¿ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[12]) // ì›ì • ì„¸ì»¨ë“œ ìŠ¤íŠ¸ë¼ì´ì»¤ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_mid_center += 3; away_for_center += 5;
 
-	switch (aform[13]) // ¿øÁ¤ ½ºÆ®¶óÀÌÄ¿ °ü·Ã ´É·ÂÄ¡ ¼³Á¤
+	switch (aform[13]) // ì›ì • ìŠ¤íŠ¸ë¼ì´ì»¤ ê´€ë ¨ ëŠ¥ë ¥ì¹˜ ì„¤ì •
 			case 1: away_for_center += 10;
 
-	printf("È¨ ÆÀ %s : ¿øÁ¤ ÆÀ %s\n\n", home_name, away_name);
+	printf("\ní™ˆ íŒ€ %s : ì›ì • íŒ€ %s\n", home_name, away_name);
 
-	// È¨ ÆÀ °æ°í, ÅğÀå
+	// í™ˆ íŒ€ ê²½ê³ , í‡´ì¥
 
-	int random = rand(time(NULL));
+	srand(time(NULL));
 	int home_yellows = 0;
 	int away_yellows = 0;
 
 	if (home_gk != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_gk_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_gk_red_time = (rand() + 100) % 90;
 				home_def_center -= home_gk_red_time / 30;
 				home_def_left -= home_gk_red_time / 30;
 				home_def_right -= home_gk_red_time / 30;
-				printf("È¨ °ñÅ°ÆÛ %dºĞ ÅğÀå", home_gk_red_time);
+				printf("í™ˆ ê³¨í‚¤í¼ %dë¶„ í‡´ì¥", home_gk_red_time);
 			}
 		}
 	}
 	if (home_swk != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_swk_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_swk_red_time = (rand() + 100) % 90;
 				home_def_center -= home_swk_red_time / 45;
 				home_def_left -= home_swk_red_time / 45;
 				home_def_right -= home_swk_red_time / 45;
 				home_mid_center -= home_swk_red_time / 45;
 				home_mid_left -= home_swk_red_time / 45;
 				home_mid_right -= home_swk_red_time / 45;
-				printf("È¨ °ñÅ°ÆÛ %dºĞ ÅğÀå", home_swk_red_time);
+				printf("í™ˆ ê³¨í‚¤í¼ %dë¶„ í‡´ì¥", home_swk_red_time);
 			}
 		}
 	}
 	if (home_cb != 0) {
 		for (home_cb; home_cb > 0; home_cb--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				home_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int home_cb_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int home_cb_red_time = (rand() + 100) % 90;
 					home_def_center -= home_cb_red_time / 45;
-					printf("È¨ ¼¾ÅÍ¹é %dºĞ ÅğÀå", home_cb_red_time);
+					printf("í™ˆ ì„¼í„°ë°± %dë¶„ í‡´ì¥", home_cb_red_time);
 				}
 			}
 		}
 	}
 	if (home_lb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_lb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_lb_red_time = (rand() + 100) % 90;
 				home_def_left -= home_lb_red_time / 30;
-				printf("È¨ ¿ŞÂÊ Ç®¹é %dºĞ ÅğÀå", home_lb_red_time);
+				printf("í™ˆ ì™¼ìª½ í’€ë°± %dë¶„ í‡´ì¥", home_lb_red_time);
 			}
 		}
 	}
 	if (home_rb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_rb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_rb_red_time = (rand() + 100) % 90;
 				home_def_right -= home_rb_red_time / 30;
-				printf("È¨ ¿À¸¥ÂÊ Ç®¹é %dºĞ ÅğÀå", home_rb_red_time);
+				printf("í™ˆ ì˜¤ë¥¸ìª½ í’€ë°± %dë¶„ í‡´ì¥", home_rb_red_time);
 			}
 		}
 	}
 	if (home_dm != 0) {
 		for (home_dm; home_dm > 0; home_dm--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				home_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int home_dm_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int home_dm_red_time = (rand() + 100) % 90;
 					home_def_center -= home_dm_red_time / 90;
 					home_mid_center -= home_dm_red_time / 30;
-					printf("È¨ ¼öºñÇü ¹ÌµåÇÊ´õ %dºĞ ÅğÀå", home_dm_red_time);
+					printf("í™ˆ ìˆ˜ë¹„í˜• ë¯¸ë“œí•„ë” %dë¶„ í‡´ì¥", home_dm_red_time);
 				}
 			}
 		}
 	}
 	if (home_lwb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_lwb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_lwb_red_time = (rand() + 100) % 90;
 				home_def_left -= home_lwb_red_time / 90;
 				home_mid_left -= home_lwb_red_time / 30;
-				printf("È¨ ¿ŞÂÊ À®¹é %dºĞ ÅğÀå", home_lwb_red_time);
+				printf("í™ˆ ì™¼ìª½ ìœ™ë°± %dë¶„ í‡´ì¥", home_lwb_red_time);
 			}
 		}
 	}
 	if (home_rwb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_rwb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_rwb_red_time = (rand() + 100) % 90;
 				home_def_right -= home_rwb_red_time / 90;
 				home_mid_right -= home_rwb_red_time / 30;
-				printf("È¨ ¿À¸¥ÂÊ À®¹é %dºĞ ÅğÀå", home_rwb_red_time);
+				printf("í™ˆ ì˜¤ë¥¸ìª½ ìœ™ë°± %dë¶„ í‡´ì¥", home_rwb_red_time);
 			}
 		}
 	}
 	if (home_lw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_lw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_lw_red_time = (rand() + 100) % 90;
 				home_mid_left -= home_lw_red_time / 11;
-				printf("È¨ ¿ŞÂÊ À®¾î %dºĞ ÅğÀå", home_lw_red_time);
+				printf("í™ˆ ì™¼ìª½ ìœ™ì–´ %dë¶„ í‡´ì¥", home_lw_red_time);
 			}
 		}
 	}
 	if (home_rw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_rw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_rw_red_time = (rand() + 100) % 90;
 				home_mid_right -= home_rw_red_time / 11;
-				printf("È¨ ¿À¸¥ÂÊ À®¾î %dºĞ ÅğÀå", home_rw_red_time);
+				printf("í™ˆ ì˜¤ë¥¸ìª½ ìœ™ì–´ %dë¶„ í‡´ì¥", home_rw_red_time);
 			}
 		}
 	}
 	if (home_cm != 0) {
 		for (home_cm; home_cm > 0; home_cm--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				home_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int home_cm_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int home_cm_red_time = (rand() + 100) % 90;
 					home_mid_center -= home_cm_red_time / 14;
-					printf("È¨ Áß¾Ó ¹ÌµåÇÊ´õ %dºĞ ÅğÀå", home_cm_red_time);
+					printf("í™ˆ ì¤‘ì•™ ë¯¸ë“œí•„ë” %dë¶„ í‡´ì¥", home_cm_red_time);
 				}
 			}
 		}
 	}
 	if (home_clw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_clw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_clw_red_time = (rand() + 100) % 90;
 				home_for_left -= home_clw_red_time / 9;
-				printf("È¨ ¿ŞÂÊ °ø°İÇü À®¾î %dºĞ ÅğÀå", home_clw_red_time);
+				printf("í™ˆ ì™¼ìª½ ê³µê²©í˜• ìœ™ì–´ %dë¶„ í‡´ì¥", home_clw_red_time);
 			}
 		}
 	}
 	if (home_crw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_crw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_crw_red_time = (rand() + 100) % 90;
 				home_for_right -= home_crw_red_time / 9;
-				printf("È¨ ¿À¸¥ÂÊ °ø°İÇü À®¾î %dºĞ ÅğÀå", home_crw_red_time);
+				printf("í™ˆ ì˜¤ë¥¸ìª½ ê³µê²©í˜• ìœ™ì–´ %dë¶„ í‡´ì¥", home_crw_red_time);
 			}
 		}
 	}
 	if (home_ss != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_ss_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_ss_red_time = (rand() + 100) % 90;
 				home_mid_center -= home_ss_red_time / 30;
 				home_for_center -= home_ss_red_time / 14;
-				printf("È¨ ¼¼ÄÁµå ½ºÆ®¶óÀÌÄ¿ %dºĞ ÅğÀå", home_ss_red_time);
+				printf("í™ˆ ì„¸ì»¨ë“œ ìŠ¤íŠ¸ë¼ì´ì»¤ %dë¶„ í‡´ì¥", home_ss_red_time);
 			}
 		}
 	}
 	if (home_st != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			home_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int home_st_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int home_st_red_time = (rand() + 100) % 90;
 				home_for_center -= home_st_red_time / 9;
-				printf("È¨ ½ºÆ®¶óÀÌÄ¿ %dºĞ ÅğÀå", home_st_red_time);
+				printf("í™ˆ ìŠ¤íŠ¸ë¼ì´ì»¤ %dë¶„ í‡´ì¥", home_st_red_time);
 			}
 		}
 	}
 
-	// ¿øÁ¤ °æ°í, ÅğÀå
+	// ì›ì • ê²½ê³ , í‡´ì¥
 
 	if (away_gk != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_gk_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_gk_red_time = (rand() + 100) % 90;
 				away_def_center -= away_gk_red_time / 30;
 				away_def_left -= away_gk_red_time / 30;
 				away_def_right -= away_gk_red_time / 30;
-				printf("¿øÁ¤ °ñÅ°ÆÛ %dºĞ ÅğÀå", away_gk_red_time);
+				printf("ì›ì • ê³¨í‚¤í¼ %dë¶„ í‡´ì¥", away_gk_red_time);
 			}
 		}
 	}
 	if (away_swk != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_swk_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_swk_red_time = (rand() + 100) % 90;
 				away_def_center -= away_swk_red_time / 45;
 				away_def_left -= away_swk_red_time / 45;
 				away_def_right -= away_swk_red_time / 45;
 				away_mid_center -= away_swk_red_time / 45;
 				away_mid_left -= away_swk_red_time / 45;
 				away_mid_right -= away_swk_red_time / 45;
-				printf("¿øÁ¤ °ñÅ°ÆÛ %dºĞ ÅğÀå", away_swk_red_time);
+				printf("ì›ì • ê³¨í‚¤í¼ %dë¶„ í‡´ì¥", away_swk_red_time);
 			}
 		}
 	}
 	if (away_cb != 0) {
 		for (away_cb; away_cb > 0; away_cb--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				away_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int away_cb_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int away_cb_red_time = (rand() + 100) % 90;
 					away_def_center -= away_cb_red_time / 45;
-					printf("¿øÁ¤ ¼¾ÅÍ¹é %dºĞ ÅğÀå", away_cb_red_time);
+					printf("ì›ì • ì„¼í„°ë°± %dë¶„ í‡´ì¥", away_cb_red_time);
 				}
 			}
 		}
 	}
 	if (away_lb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_lb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_lb_red_time = (rand() + 100) % 90;
 				away_def_left -= away_lb_red_time / 30;
-				printf("¿øÁ¤ ¿ŞÂÊ Ç®¹é %dºĞ ÅğÀå", away_lb_red_time);
+				printf("ì›ì • ì™¼ìª½ í’€ë°± %dë¶„ í‡´ì¥", away_lb_red_time);
 			}
 		}
 	}
 	if (away_rb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_rb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_rb_red_time = (rand() + 100) % 90;
 				away_def_right -= away_rb_red_time / 30;
-				printf("¿øÁ¤ ¿À¸¥ÂÊ Ç®¹é %dºĞ ÅğÀå", away_rb_red_time);
+				printf("ì›ì • ì˜¤ë¥¸ìª½ í’€ë°± %dë¶„ í‡´ì¥", away_rb_red_time);
 			}
 		}
 	}
 	if (away_dm != 0) {
 		for (away_dm; away_dm > 0; away_dm--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				away_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int away_dm_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int away_dm_red_time = (rand() + 100) % 90;
 					away_def_center -= away_dm_red_time / 90;
 					away_mid_center -= away_dm_red_time / 30;
-					printf("¿øÁ¤ ¼öºñÇü ¹ÌµåÇÊ´õ %dºĞ ÅğÀå", away_dm_red_time);
+					printf("ì›ì • ìˆ˜ë¹„í˜• ë¯¸ë“œí•„ë” %dë¶„ í‡´ì¥", away_dm_red_time);
 				}
 			}
 		}
 	}
 	if (away_lwb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_lwb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_lwb_red_time = (rand() + 100) % 90;
 				away_def_left -= away_lwb_red_time / 90;
 				away_mid_left -= away_lwb_red_time / 30;
-				printf("¿øÁ¤ ¿ŞÂÊ À®¹é %dºĞ ÅğÀå", away_lwb_red_time);
+				printf("ì›ì • ì™¼ìª½ ìœ™ë°± %dë¶„ í‡´ì¥", away_lwb_red_time);
 			}
 		}
 	}
 	if (away_rwb != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_rwb_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_rwb_red_time = (rand() + 100) % 90;
 				away_def_right -= away_rwb_red_time / 90;
 				away_mid_right -= away_rwb_red_time / 30;
-				printf("¿øÁ¤ ¿À¸¥ÂÊ À®¹é %dºĞ ÅğÀå", away_rwb_red_time);
+				printf("ì›ì • ì˜¤ë¥¸ìª½ ìœ™ë°± %dë¶„ í‡´ì¥", away_rwb_red_time);
 			}
 		}
 	}
 	if (away_lw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_lw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_lw_red_time = (rand() + 100) % 90;
 				away_mid_left -= away_lw_red_time / 11;
-				printf("¿øÁ¤ ¿ŞÂÊ À®¾î %dºĞ ÅğÀå", away_lw_red_time);
+				printf("ì›ì • ì™¼ìª½ ìœ™ì–´ %dë¶„ í‡´ì¥", away_lw_red_time);
 			}
 		}
 	}
 	if (away_rw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_rw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_rw_red_time = (rand() + 100) % 90;
 				away_mid_right -= away_rw_red_time / 11;
-				printf("¿øÁ¤ ¿À¸¥ÂÊ À®¾î %dºĞ ÅğÀå", away_rw_red_time);
+				printf("ì›ì • ì˜¤ë¥¸ìª½ ìœ™ì–´ %dë¶„ í‡´ì¥", away_rw_red_time);
 			}
 		}
 	}
 	if (away_cm != 0) {
 		for (away_cm; away_cm > 0; away_cm--) {
-			if (rand(random) % 10 == 0) {
+			if (rand() % 10 == 0) {
 				away_yellows++;
-				++random;
-				if (rand(random) % 10 == 0) {
-					int away_cm_red_time = (rand(random) + 100) % 90;
+				if (rand() % 10 == 0) {
+					int away_cm_red_time = (rand() + 100) % 90;
 					away_mid_center -= away_cm_red_time / 14;
-					printf("¿øÁ¤ Áß¾Ó ¹ÌµåÇÊ´õ %dºĞ ÅğÀå", away_cm_red_time);
+					printf("ì›ì • ì¤‘ì•™ ë¯¸ë“œí•„ë” %dë¶„ í‡´ì¥", away_cm_red_time);
 				}
 			}
 		}
 	}
 	if (away_clw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_clw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_clw_red_time = (rand() + 100) % 90;
 				away_for_left -= away_clw_red_time / 9;
-				printf("¿øÁ¤ ¿ŞÂÊ °ø°İÇü À®¾î %dºĞ ÅğÀå", away_clw_red_time);
+				printf("ì›ì • ì™¼ìª½ ê³µê²©í˜• ìœ™ì–´ %dë¶„ í‡´ì¥", away_clw_red_time);
 			}
 		}
 	}
 	if (away_crw != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_crw_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_crw_red_time = (rand() + 100) % 90;
 				away_for_right -= away_crw_red_time / 9;
-				printf("¿øÁ¤ ¿À¸¥ÂÊ °ø°İÇü À®¾î %dºĞ ÅğÀå", away_crw_red_time);
+				printf("ì›ì • ì˜¤ë¥¸ìª½ ê³µê²©í˜• ìœ™ì–´ %dë¶„ í‡´ì¥", away_crw_red_time);
 			}
 		}
 	}
 	if (away_ss != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_ss_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_ss_red_time = (rand() + 100) % 90;
 				away_mid_center -= away_ss_red_time / 30;
 				away_for_center -= away_ss_red_time / 14;
-				printf("¿øÁ¤ ¼¼ÄÁµå ½ºÆ®¶óÀÌÄ¿ %dºĞ ÅğÀå", away_ss_red_time);
+				printf("ì›ì • ì„¸ì»¨ë“œ ìŠ¤íŠ¸ë¼ì´ì»¤ %dë¶„ í‡´ì¥", away_ss_red_time);
 			}
 		}
 	}
 	if (away_st != 0) {
-		if (rand(random) % 10 == 0) {
+		if (rand() % 10 == 0) {
 			away_yellows++;
-			++random;
-			if (rand(random) % 10 == 0) {
-				int away_st_red_time = (rand(random) + 100) % 90;
+			if (rand() % 10 == 0) {
+				int away_st_red_time = (rand() + 100) % 90;
 				away_for_center -= away_st_red_time / 9;
-				printf("¿øÁ¤ ½ºÆ®¶óÀÌÄ¿ %dºĞ ÅğÀå", away_st_red_time);
+				printf("ì›ì • ìŠ¤íŠ¸ë¼ì´ì»¤ %dë¶„ í‡´ì¥", away_st_red_time);
 			}
 		}
 	}
 
-	// È¨ Á¡À¯À²
+	// í™ˆ ì ìœ ìœ¨
 
 	float share_left = (float)home_mid_left / ((float)home_mid_left + (float)away_mid_left);
 	float share_center = (float)home_mid_center / ((float)home_mid_center + (float)away_mid_center);
@@ -539,60 +510,48 @@ int main()
 	int home_goals = 0, away_goals = 0;
 	int goal;
 
-	// È¨ °ñ °è»ê
+	// í™ˆ ê³¨ ê³„ì‚°
 	for (home_offense_left; home_offense_left > 0; home_offense_left--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			home_goals++;
 	}
 	for (home_offense_center; home_offense_center > 0; home_offense_center--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			home_goals++;
 	}
 	for (home_offense_right; home_offense_right > 0; home_offense_right--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			home_goals++;
 	}
 
-	// ¿øÁ¤ °ñ °è»ê
+	// ì›ì • ê³¨ ê³„ì‚°
 	for (away_offense_left; away_offense_left > 0; away_offense_left--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			away_goals++;
 	}
 	for (away_offense_center; away_offense_center > 0; away_offense_center--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			away_goals++;
 	}
 	for (away_offense_right; away_offense_right > 0; away_offense_right--) {
-		++random;
-		srand(random);
 		goal = rand() % 3;
 		if (goal == 0)
 			away_goals++;
 	}
 
 	printf("\n\nRESULTS");
-	printf("\n%s %d : %d %s", home_name, home_goals, away_goals, away_name);
+	printf("\n%s %d : %d %s\n", home_name, home_goals, away_goals, away_name);
 	if (home_goals > away_goals)
-		printf("\nÈ¨ ÆÀ %s ½Â\n½ÂÁ¡ +3, °ñµæ½Ç +%d", home_name, home_goals - away_goals);
+		printf("\ní™ˆ íŒ€ %s ìŠ¹\nìŠ¹ì  +3, ê³¨ë“ì‹¤ +%d", home_name, home_goals - away_goals);
 	else if (home_goals < away_goals)
-		printf("\n¿øÁ¤ ÆÀ %s ½Â\n½ÂÁ¡ +3, °ñµæ½Ç +%d", away_name, away_goals - home_goals);
+		printf("\nì›ì • íŒ€ %s ìŠ¹\nìŠ¹ì  +3, ê³¨ë“ì‹¤ +%d", away_name, away_goals - home_goals);
 	else
-		printf("\n¹«½ÂºÎ\n¾çÃø ½ÂÁ¡ +1");
+		printf("\në¬´ìŠ¹ë¶€\nì–‘ì¸¡ ìŠ¹ì  +1");
 
 	system("PAUSE");
 	return 0;
