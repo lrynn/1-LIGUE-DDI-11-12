@@ -507,6 +507,20 @@ int main()
 	int home_offense_right = (home_for_right - away_def_right) * share_right;
 	int away_offense_right = (away_for_right - home_def_right - 1) * (1 - share_right);
 
+	if (home_offense_center < 0)
+		home_offense_center = 0;
+	if (home_offense_left < 0)
+		home_offense_left = 0;
+	if (home_offense_right < 0)
+		home_offense_right = 0;
+
+	if (away_offense_center < 0)
+		away_offense_center = 0;
+	if (away_offense_left < 0)
+		away_offense_left = 0;
+	if (away_offense_right < 0)
+		away_offense_right = 0;
+
 	int home_goals = 0, away_goals = 0;
 	int goal;
 
