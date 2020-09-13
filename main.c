@@ -5,12 +5,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996)
 
-// A5BGLEAGUE Simulator V 1.1.2 Release
+// A5BGLEAGUE Simulator V 1.1.3 Release
 
 int main()
 {
-	printf("\nA5BG FOOTBALL LEAGUE ZODDESLIGA 09-10");
-	printf("\n경기 시뮬레이터 1.1.2 Release");
+	SetConsoleTitle(TEXT("ZODDESLIGA Simulator 1.1.3"));
+	printf("\nA5BG FOOTBALL LEAGUE ZODDESLIGA 09-10 경기 시뮬레이터");
 
 	//홈
 
